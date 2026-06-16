@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{% if title %}{{ title }}{% else %}OnionShare :: CHAT{% endif %}</title>
+<link href="{{ static_url_path }}/img/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{ static_url_path }}/css/style.css" media="all">
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<header>
+<div class="header-left">
+<span class="blink-caret" aria-hidden="true">▮</span>
+<span class="header-title">{% if title %}{{ title }}{% else %}ONIONSHARE<span class="accent">::</span>CHAT{% endif %}</span>
+</div>
+<div class="header-right">
+<span class="status-dot" id="conn-indicator" aria-label="Ulanish holati"></span>
+<span class="status-label" id="conn-label">ULANMOQDA</span>
+<span class="header-time" id="header-clock"></span>
+</div>
+</header>
+<noscript>
+<div class="noscript-warning">
+<span class="accent">[ XATO ]</span> JavaScript talab qilinadi. Tor Brauzerini <strong>Xavfsizroq</strong> yoki <strong>Standart</strong> rejimga o'rnating.
+</div>
+</noscript>
+<div class="chat-container no-js">
+<aside class="sidebar">
+<div class="sidebar-section">
+<div class="section-label">SHAXS</div>
+<div class="username-block">
+<label for="username" class="field-label">NOM<span class="accent">:</span></label>
+<div class="input-wrapper">
+<span class="input-prefix" aria-hidden="true">~$</span>
+<input id="username" value="{{ username }}" autocomplete="off" spellcheck="false" maxlength="128"/>
+</div>
+<p id="username-error" role="alert"></p>
+</div>
+</div>
+<div class="sidebar-section">
+<div class="section-label">FOYDALANUVCHILAR <span id="user-count" class="accent">[0]</span></div>
+<ul id="user-list" aria-label="Ulangan foydalanuvchilar"></ul>
+</div>
+<div class="sidebar-footer">
+<div class="sys-line">TIZ<span class="accent">::</span>TOR_TARMOG'I</div>
+<div class="sys-line">ENC<span class="accent">::</span>UCHIDAN-UCHIGA</div>
+<div class="sys-line">ANON<span class="accent">::</span>FAOL</div>
+</div>
+</aside>
+<main class="chat-main">
+<div class="chat-topbar">
+<span class="topbar-channel">#xavfsiz-kanal</span>
+<span class="topbar-info">JURNAL YO'Q · TARIX YO'Q · IZ YO'Q</span>
+</div>
+<div id="chat" role="log" aria-live="polite" aria-label="Chat xabarlari"></div>
+<div class="chat-input-area">
+<span class="prompt-prefix" aria-hidden="true">➤</span>
+<input
+type="text"
+id="new-message"
+name="new-message"
+placeholder="Xabar yozing..."
+autocomplete="off"
+spellcheck="false"
+aria-label="Xabar kiritish"
+/>
+<span class="char-counter" id="char-counter" aria-live="polite"></span>
+</div>
+</main>
+</div>
+<script src="{{ static_url_path }}/js/jquery-3.5.1.min.js"></script>
+<script src="{{ static_url_path }}/js/socket.io.min.js"></script>
+<script async src="{{ static_url_path }}/js/chat.js"></script>
+</body>
+</html>
