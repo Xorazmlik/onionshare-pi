@@ -36,7 +36,7 @@ OnionShare Pi — bu [OnionShare](https://onionshare.org/) loyihasining Raspberr
 ### 1. Reponi klonlash
 
 ```bash
-git clone https://github.com/VIPOS-testuser/onionshare-pi.git
+git clone https://github.com/Xorazmlik/onionshare-pi.git
 cd onionshare-pi/cli
 ```
 
